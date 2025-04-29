@@ -9,6 +9,7 @@ import { Pagina1PageRoutingModule } from './pagina1-routing.module';
 import { Pagina1Page } from './pagina1.page';
 import { MiscomponentesModule } from 'src/app/componentes/miscomponentes.module';
 
+
 @NgModule({
   imports: [
     CommonModule,

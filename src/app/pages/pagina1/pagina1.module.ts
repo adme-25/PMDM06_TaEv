@@ -10,6 +10,7 @@ import { Pagina1Page } from './pagina1.page';
 import { MiscomponentesModule } from 'src/app/componentes/miscomponentes.module';
 
 
+
 @NgModule({
   imports: [
     CommonModule,

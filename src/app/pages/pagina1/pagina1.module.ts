@@ -9,6 +9,7 @@ import { Pagina1PageRoutingModule } from './pagina1-routing.module';
 import { Pagina1Page } from './pagina1.page';
 import { MiscomponentesModule } from 'src/app/componentes/miscomponentes.module';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MiscomponentesModule } from 'src/app/componentes/miscomponentes.module'
     FormsModule,
     IonicModule,
     Pagina1PageRoutingModule,
-    MiscomponentesModule
+    MiscomponentesModule,
+    ReactiveFormsModule
   ],
   declarations: [Pagina1Page]
 })

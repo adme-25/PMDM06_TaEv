@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { FormControl, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { TextToSpeech, TTSOptions } from '@capacitor-community/text-to-speech';
 
 @Component({
@@ -10,9 +10,9 @@ import { TextToSpeech, TTSOptions } from '@capacitor-community/text-to-speech';
 })
 export class Pagina1Page implements OnInit {
 
-  texto: any;
-  voice: any;
-  idioma: any;
+  texto= new FormControl;
+  voice= new FormControl;
+  idioma= new FormControl;
 
   public supportedLanguages: string[] = [];
 
@@ -34,8 +34,8 @@ export class Pagina1Page implements OnInit {
 
   public async speak(): Promise<void> {
 
-    await TextToSpeech.speak({ text: this.texto, lang: this.idioma?.value, voice: this.voice?.value });
-    console.log(this.texto + this.idioma + this.voice);
+    await TextToSpeech.speak({ text: this.texto?.value, lang: this.idioma?.value, voice: this.voice?.value });
+    
   }
 
   public async stop(): Promise<void> {

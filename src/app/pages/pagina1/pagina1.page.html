@@ -3,21 +3,21 @@
 <ion-content>
   <ion-card>
     <ion-item>
-      <ion-select label="Idioma" placeholder="lengua">
+      <ion-select label="Idioma" [formControl]="idioma" name="idioma" placeholder="lengua">
         <div *ngFor = "let lang of supportedLanguages">
           <ion-select-option [value]="lang">{{ lang }}</ion-select-option>
         </div>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-select label="Voz" placeholder="Voces">
+      <ion-select label="Voz" placeholder="Voces" name="voz" [formControl]="voice">
         <div *ngFor = "let voz of supportedVoices">
-          <ion-select-option [value]="voz" [(ngModel)]="voice">{{ voz.name }}</ion-select-option>
+          <ion-select-option [value]="voz">{{ voz.name }}</ion-select-option>
         </div>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-input label="Introduce un texto:" placeholder="Texto" [(ngModel)]="texto" required></ion-input>
+      <ion-input label="Introduce un texto:" placeholder="Texto" name="texto" [formControl]="texto" required></ion-input>
     </ion-item>
     <ion-card-content>
       <ion-button expand="block" (click)="speak()">Speak</ion-button>

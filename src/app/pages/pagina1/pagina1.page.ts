@@ -35,7 +35,7 @@ export class Pagina1Page implements OnInit {
   public async speak(): Promise<void> {
 
     await TextToSpeech.speak({ text: this.texto?.value, lang: this.idioma?.value, voice: this.voice?.value });
-    
+    console.log(this.voice);
   }
 
   public async stop(): Promise<void> {

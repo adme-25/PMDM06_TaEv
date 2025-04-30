@@ -9,15 +9,17 @@
         </div>
       </ion-select>
     </ion-item>
+
     <ion-item>
       <ion-select label="Voz" placeholder="Voces" name="voz" [formControl]="voice">
-        <div *ngFor = "let voz of supportedVoices">
-          <ion-select-option [value]="voz">{{ voz.name }}</ion-select-option>
-        </div>
+        <ion-select-option *ngFor="let voz of supportedVoices; let i = index" [value]="i">
+          {{ voz.name }}
+        </ion-select-option>
       </ion-select>
     </ion-item>
+    
     <ion-item>
-      <ion-input label="Introduce un texto:" placeholder="Texto" name="texto" [formControl]="texto" required></ion-input>
+      <ion-textarea label="Introduce un texto:" auto-grow="true" placeholder="Texto" name="texto" [formControl]="texto" required></ion-textarea>
     </ion-item>
     <ion-card-content>
       <ion-button expand="block" (click)="speak()">Speak</ion-button>
